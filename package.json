@@ -1,0 +1,15 @@
+{
+  "name": "node_with_json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./templates/sass/_main.scss:./templates/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "sass": "^1.49.8"
+  }
+}
