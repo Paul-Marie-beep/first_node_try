@@ -5,7 +5,7 @@
     "flight": "1978",
     "country": "🇫🇷",
     "description": "Le Mirage 2000 est un avion de chasse conçu par la société française Dassault Aviation, à la fin des années 1970. Bien que la formule à aile delta fasse penser au Mirage III des années 1960 et que le Mirage 2000 soit de taille comparable, il s'agit en fait d'un avion entièrement nouveau, avec une surface alaire plus importante, naturellement instable pour améliorer sa manœuvrabilité et équipé de commandes de vol électriques. Mis en service en 1984, le Mirage 2000 est principalement utilisé par l'Armée de l'air française qui en a reçu 315 exemplaires, tandis que 286 autres ont été exportés vers huit pays différents.",
-    "image": "./img/mirage.jpeg"
+    "image": "templates/img/mirage.jpeg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "flight": "1974",
     "country": "🇺🇸",
     "description": "Le F-16 Fighting Falcon est un avion de combat multirôle développé par General Dynamics (aujourd'hui Lockheed Martin) pour les États-Unis dans les années 1970. Commandé par plus de vingt pays différents, construit sous licence en Turquie, en Corée du Sud et par un groupe de quatre pays de l'OTAN en Belgique et aux Pays-Bas, le F-16 est l'avion de chasse le plus utilisé dans le monde avec, selon FlightGlobal (en), 2 309 appareils en service en 2012 soit 15 % de l'ensemble des avions de combat dans le monde3 et, en 2020 2 282 avions pour 16 % de la flotte de combat mondiale4. Le 4 500e exemplaire a été livré en avril 20125, au 26 juin 2018, 4 608 exemplaires ont été commandés par 28 clients et environ 3 200 F-16 sont en service. Il devait alors être remplacé par le F-35 Lightning II aux États-Unis et dans plusieurs pays ouest-européens",
-    "image": "./img/f16.jpeg"
+    "image": "img/f16.jpeg"
   },
   {
     "id": 3,

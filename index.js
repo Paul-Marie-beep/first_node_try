@@ -2,6 +2,8 @@ const fs = require("fs");
 const http = require("http");
 const url = require("url");
 
+const slugify = require("slugify");
+
 const replaceTemplate = require("./modules/replaceTemplate");
 //////////////////////////////////////////////////////////////////////
 
@@ -20,13 +22,12 @@ const templateCard = fs.readFileSync(
 const data = fs.readFileSync(`${__dirname}/data/data.json`, "utf-8");
 const dataObject = JSON.parse(data);
 
+// const slugs =
+
 const server = http.createServer((request, response) => {
-  const route = request.url;
+  const { query, pathname } = url.parse(request.url, true);
 
-  console.log("server trig");
-
-  if (route === "/" || route === "/overview") {
-    console.log("route trig");
+  if (pathname === "/" || pathname === "/overview") {
     response.writeHead(200, { "content-type": "text/html" });
 
     const cardsHtml = dataObject
@@ -35,6 +36,15 @@ const server = http.createServer((request, response) => {
     const output = templateOverview.replace("{%PLANES__CARDS%}", cardsHtml);
 
     response.end(output);
+  } else if (pathname === "/plane") {
+    response.writeHead(200, { "content-type": "text/html" });
+
+    const plane = dataObject[query.id - 1];
+    const output = replaceTemplate(templatePlane, plane);
+    response.end(output);
+  } else {
+    response.writeHead(404, { "content-type": "text/html" });
+    response.end("<h1>Page not found !!!</h1>");
   }
 });
 

@@ -7,5 +7,7 @@ module.exports = (template, plane) => {
   transit.pop();
   const transitBis = `${transit.join(" ")}...`;
   output = output.replace(/{%PLANEDESCRIPTION%}/g, transitBis);
+  // output = output.replace(/{%PLANEIMAGE%}/g, plane.image);
+  output = output.replace(/{%PLANE_FULLTEXT%}/g, plane.description);
   return output;
 };
