@@ -21,8 +21,10 @@ const templateCard = fs.readFileSync(
 );
 const data = fs.readFileSync(`${__dirname}/data/data.json`, "utf-8");
 const dataObject = JSON.parse(data);
+console.log(dataObject);
 
-// const slugs =
+const slugs = dataObject.map((el) => slugify(el.name, { lower: true }));
+console.log("slugs", slugs);
 
 const server = http.createServer((request, response) => {
   const { query, pathname } = url.parse(request.url, true);
@@ -38,8 +40,9 @@ const server = http.createServer((request, response) => {
     response.end(output);
   } else if (pathname === "/plane") {
     response.writeHead(200, { "content-type": "text/html" });
-
-    const plane = dataObject[query.id - 1];
+    console.log("query", query);
+    const planeIndex = slugs.findIndex((el) => el === query.slug);
+    const plane = dataObject[planeIndex];
     const output = replaceTemplate(templatePlane, plane);
     response.end(output);
   } else {
